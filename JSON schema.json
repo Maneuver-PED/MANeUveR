@@ -1,0 +1,290 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "IP": {
+      "type": "object",
+      "properties": {
+        "IPType": {
+          "type": "string"
+        },
+        "publicIPs": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "IPType",
+        "publicIPs"
+      ]
+    },
+    "application": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "components": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Compute": {
+              "type": "object",
+              "properties": {
+                "CPU": {
+                  "type": "string"
+                },
+                "GPU": {
+                  "type": "boolean"
+                },
+                "Memory": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "CPU",
+                "GPU",
+                "Memory"
+              ]
+            },
+            "Network": {
+              "type": "object",
+              "properties": {
+                "dataIn": {
+                  "type": "string"
+                },
+                "dataOut": {
+                  "type": "string"
+                },
+                "networkConnections": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "dataIn",
+                "dataOut",
+                "networkConnections"
+              ]
+            },
+            "Storage": {
+              "type": "object",
+              "properties": {
+                "StorageType": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "StorageType"
+              ]
+            },
+            "id": {
+              "type": "integer"
+            },
+            "keywords": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "name": {
+              "type": "string"
+            },
+            "operatingSystem": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Compute",
+            "Network",
+            "Storage",
+            "id",
+            "keywords",
+            "name",
+            "operatingSystem"
+          ]
+        }
+      ]
+    },
+    "restrictions": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "alphaCompId": {
+              "type": "integer"
+            },
+            "compIdList": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "alphaCompId",
+            "compIdList",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alphaCompId": {
+              "type": "integer"
+            },
+            "betaCompId": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "alphaCompId",
+            "betaCompId",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alphaCompId": {
+              "type": "integer"
+            },
+            "betaCompId": {
+              "type": "integer"
+            },
+            "sign": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "alphaCompId",
+            "betaCompId",
+            "sign",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alphaCompId": {
+              "type": "integer"
+            },
+            "betaCompId": {
+              "type": "integer"
+            },
+            "number": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "alphaCompId",
+            "betaCompId",
+            "number",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alphaCompId": {
+              "type": "integer"
+            },
+            "bound": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "alphaCompId",
+            "bound",
+            "type"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "alphaCompId": {
+              "type": "integer"
+            },
+            "lowerBound": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "string"
+            },
+            "upperBound": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "alphaCompId",
+            "lowerBound",
+            "type",
+            "upperBound"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "compIdList": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "compIdList",
+            "type"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "IP",
+    "application",
+    "budget",
+    "components",
+    "restrictions"
+  ]
+}
